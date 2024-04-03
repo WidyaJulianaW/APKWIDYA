@@ -58,6 +58,7 @@ String Tanggal1,Tanggal2,sql;
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("s/d");
 
+        btncari1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-search-20.png"))); // NOI18N
         btncari1.setText("cari");
         btncari1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +69,7 @@ String Tanggal1,Tanggal2,sql;
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Diantara Tgl");
 
+        btncari2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-search-20.png"))); // NOI18N
         btncari2.setText("cari");
         btncari2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +77,7 @@ String Tanggal1,Tanggal2,sql;
             }
         });
 
+        btncari3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-search-20.png"))); // NOI18N
         btncari3.setText("cari");
         btncari3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,7 +186,7 @@ String Tanggal1,Tanggal2,sql;
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(15, 38, Short.MAX_VALUE))
+                .addGap(15, 37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,7 +220,7 @@ String Tanggal1,Tanggal2,sql;
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         pack();

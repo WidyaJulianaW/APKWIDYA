@@ -211,7 +211,7 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btnbaru = new javax.swing.JButton();
+        btnkeluar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblpenjualan = new javax.swing.JTable();
         btntambah = new javax.swing.JButton();
@@ -219,10 +219,12 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
         btnhapus = new javax.swing.JButton();
         txtcari = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btncari.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btncari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-search-20.png"))); // NOI18N
         btncari.setText("CARI");
         btncari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,17 +263,25 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
         });
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-transaction-20.png"))); // NOI18N
         jLabel3.setText("ID Penjualan");
 
-        txtjumlah.setText("Jumlah");
+        txtjumlah.setText("JUMLAH");
 
         btnbayar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btnbayar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-money-transfer-20_1.png"))); // NOI18N
         btnbayar.setText("BAYAR");
+        btnbayar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbayarActionPerformed(evt);
+            }
+        });
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-total-sales-30.png"))); // NOI18N
         jLabel1.setText("TRANSAKSI PENJUALAN");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -292,10 +302,17 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
         );
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-receipt-dollar-20_1.png"))); // NOI18N
         jLabel4.setText("Data Penjualan");
 
-        btnbaru.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnbaru.setText("BARU");
+        btnkeluar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnkeluar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-logout-rounded-20.png"))); // NOI18N
+        btnkeluar.setText("KELUAR");
+        btnkeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnkeluarActionPerformed(evt);
+            }
+        });
 
         tblpenjualan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -315,7 +332,8 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
         });
         jScrollPane2.setViewportView(tblpenjualan);
 
-        btntambah.setText("Tambah");
+        btntambah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-plus-20_1.png"))); // NOI18N
+        btntambah.setText("TAMBAH");
         btntambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btntambahActionPerformed(evt);
@@ -323,9 +341,11 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
         });
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-package-25.png"))); // NOI18N
         jLabel2.setText("Masukan Nama Barang");
 
-        btnhapus.setText("Hapus");
+        btnhapus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-cancel-20.png"))); // NOI18N
+        btnhapus.setText("HAPUS");
         btnhapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnhapusActionPerformed(evt);
@@ -333,18 +353,25 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
         });
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-bill-20_1.png"))); // NOI18N
         jLabel5.setText("Total");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(530, Short.MAX_VALUE)
-                .addComponent(txtjumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtjumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btntambah)
-                .addGap(14, 14, 14))
+                .addComponent(btntambah, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -354,13 +381,10 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
                             .addGap(45, 45, 45)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(btncari)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE))
+                                    .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btncari)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 398, Short.MAX_VALUE))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel2)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -395,18 +419,26 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(btnbayar)
                                                 .addGap(60, 60, 60)
-                                                .addComponent(btnbaru))))))
+                                                .addComponent(btnkeluar))))))
                             .addGap(0, 0, Short.MAX_VALUE)))
                     .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(233, 233, 233)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtjumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btntambah))
-                .addContainerGap(527, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(233, 233, 233)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtjumlah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btntambah))
+                        .addGap(151, 151, 151))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(73, 73, 73)))
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(356, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -422,9 +454,7 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btncari))
-                    .addGap(18, 18, 18)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(25, 25, 25)
+                    .addGap(190, 190, 190)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3)
                         .addComponent(txtidpenjualan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -446,7 +476,7 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
                             .addGap(54, 54, 54)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(btnbayar)
-                                .addComponent(btnbaru))))
+                                .addComponent(btnkeluar))))
                     .addGap(24, 24, 24)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtbayar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -562,6 +592,21 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
         // TODO add your handling code here:
     }//GEN-LAST:event_txtjamActionPerformed
 
+    private void btnbayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbayarActionPerformed
+total();
+simpan();
+autonumber();
+txttotal.setText("");
+txtbayar.setText("");
+txtkembalian.setText("");
+txtidpenjualan.setText("");        // TODO add your handling code here:
+    }//GEN-LAST:event_btnbayarActionPerformed
+
+    private void btnkeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkeluarActionPerformed
+new MenuUtama().setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnkeluarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -598,10 +643,10 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnbaru;
     private javax.swing.JButton btnbayar;
     private javax.swing.JButton btncari;
     private javax.swing.JButton btnhapus;
+    private javax.swing.JButton btnkeluar;
     private javax.swing.JButton btntambah;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -611,6 +656,7 @@ String  harga,idproduk,idprodukpenjualan,iddetail,jam,tanggal,sub_total;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tblpenjualan;
     private javax.swing.JTable tblproduk;
     private javax.swing.JTextField txtbayar;

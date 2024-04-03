@@ -64,7 +64,7 @@
                           </Group>
                           <Component id="txtusername" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtlogin" alignment="1" max="32767" attributes="0"/>
-                          <Component id="cmbakses" alignment="1" pref="156" max="32767" attributes="0"/>
+                          <Component id="cmbakses" alignment="1" pref="132" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -103,7 +103,7 @@
                   <Component id="btnbatal" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnsimpan" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -134,6 +134,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="3"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/aplikasikasir_widya/image/icons8-cancel-20.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="BATAL"/>
       </Properties>
       <Events>
@@ -145,6 +148,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="3"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/aplikasikasir_widya/image/icons8-customer-30_1.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="DAFTAR DISINI"/>
       </Properties>
     </Component>
@@ -152,6 +158,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="14" style="3"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/aplikasikasir_widya/image/icons8-username-20.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="ID Login"/>
       </Properties>
@@ -161,6 +170,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="3"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/aplikasikasir_widya/image/icons8-checked-identification-documents-20.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Usename"/>
       </Properties>
     </Component>
@@ -169,6 +181,9 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="3"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/aplikasikasir_widya/image/icons8-password-20.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Password"/>
       </Properties>
     </Component>
@@ -176,6 +191,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="3"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/aplikasikasir_widya/image/icons8-access-20_1.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Hak Akes"/>
       </Properties>
@@ -207,6 +225,9 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="12" style="3"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/aplikasikasir_widya/image/icons8-bookmark-20.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="SIMPAN"/>
       </Properties>

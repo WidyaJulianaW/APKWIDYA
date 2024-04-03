@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package aplikasikasir_widya;
-import static java.awt.Frame.MAXIMIZED_BOTH;
 import static java.lang.Thread.sleep;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +12,6 @@ import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author OWNER
@@ -27,21 +25,24 @@ ResultSet rst;
      */
     public MenuUtama() {
         initComponents();
-    this.setExtendedState(MAXIMIZED_BOTH);
+         this.setExtendedState(MAXIMIZED_BOTH);
         konek = Koneksi.koneksiDb();
+        mulai();
+        tampilWaktu();
     }
 
     public void mulai(){
+        Beranda.setEnabled(true);
         Register.setEnabled(false);
         Logout.setEnabled(false);
         Toko.setEnabled(false);
         Transaksi.setEnabled(false);
         Laporan.setEnabled(false);
-        txtJam.setEditable(false);
+        txtJam.setEnabled(false);
        txtTanggal.setEnabled(false);
-        FromLogin.setEnabled(false);
-        btnMasuk.setEnabled(false);
-        btnBatal.setEnabled(false);
+        FromLogin.setVisible(false);
+        btnMasuk.setEnabled(true);
+        btnBatal.setEnabled(true);
         btnProduk.setEnabled(false);
        btnPelanggan.setEnabled(false);
        btnPenjualan.setEnabled(false);
@@ -61,13 +62,14 @@ ResultSet rst;
                     txtTanggal.setText(Tanggal.format(cal.getTime()));
                try { sleep(1000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(FormPenjualan.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(FromPenjualan.class.getName()).log(Level.SEVERE, null, ex);
             }
                 }
             }
         };
         clock.start();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,6 +80,13 @@ ResultSet rst;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblUser = new javax.swing.JLabel();
+        txtJam = new javax.swing.JTextField();
+        txtTanggal = new javax.swing.JTextField();
+        btnPelanggan = new javax.swing.JButton();
+        btnProduk = new javax.swing.JButton();
+        btnPenjualan = new javax.swing.JButton();
         FromLogin = new javax.swing.JInternalFrame();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -90,23 +99,80 @@ ResultSet rst;
         btnMasuk = new javax.swing.JButton();
         cmbAkses = new javax.swing.JComboBox<>();
         btnTambah = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        txtJam = new javax.swing.JTextField();
-        txtTanggal = new javax.swing.JTextField();
-        btnPelanggan = new javax.swing.JButton();
-        btnProduk = new javax.swing.JButton();
-        btnPenjualan = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        Beranda = new javax.swing.JMenu();
+        Register = new javax.swing.JMenuItem();
+        Login = new javax.swing.JMenuItem();
+        Logout = new javax.swing.JMenuItem();
+        Toko = new javax.swing.JMenu();
+        Produk = new javax.swing.JMenuItem();
+        Pelanggan = new javax.swing.JMenuItem();
+        Transaksi = new javax.swing.JMenu();
+        Penjualan = new javax.swing.JMenuItem();
+        Laporan = new javax.swing.JMenu();
+        RkpLaporan = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        RkpLap = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        Tentang = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 204, 255));
+
+        lblUser.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        lblUser.setForeground(new java.awt.Color(255, 255, 255));
+        lblUser.setText("Silahkan Login Dulu..!!!");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(lblUser)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(lblUser)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        txtJam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtJamActionPerformed(evt);
+            }
+        });
+
+        btnPelanggan.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        btnPelanggan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-customer-30_1.png"))); // NOI18N
+        btnPelanggan.setText("PELANGGAN");
+        btnPelanggan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPelangganActionPerformed(evt);
+            }
+        });
+
+        btnProduk.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        btnProduk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-new-product-20.png"))); // NOI18N
+        btnProduk.setText("PRODUK");
+        btnProduk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProdukActionPerformed(evt);
+            }
+        });
+
+        btnPenjualan.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        btnPenjualan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-total-sales-30.png"))); // NOI18N
+        btnPenjualan.setText("PENJUALAN");
+        btnPenjualan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPenjualanActionPerformed(evt);
+            }
+        });
+
+        FromLogin.setTitle("From Login");
         FromLogin.setVisible(true);
 
         jPanel2.setBackground(new java.awt.Color(255, 204, 255));
@@ -134,15 +200,19 @@ ResultSet rst;
         );
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-username-20.png"))); // NOI18N
         jLabel3.setText("Username");
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-password-20.png"))); // NOI18N
         jLabel4.setText("Password");
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-access-20.png"))); // NOI18N
         jLabel5.setText("Hak Akses");
 
         btnBatal.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        btnBatal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-cancel-20.png"))); // NOI18N
         btnBatal.setText("BATAL");
         btnBatal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +221,7 @@ ResultSet rst;
         });
 
         btnMasuk.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        btnMasuk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-enter-20.png"))); // NOI18N
         btnMasuk.setText("MASUK");
         btnMasuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +229,7 @@ ResultSet rst;
             }
         });
 
-        cmbAkses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- Pilih Salah Satu -", "Admin", "Petugas" }));
+        cmbAkses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- Pilih Salah Satu -", "ADMIN", "PETUGAS" }));
 
         javax.swing.GroupLayout FromLoginLayout = new javax.swing.GroupLayout(FromLogin.getContentPane());
         FromLogin.getContentPane().setLayout(FromLoginLayout);
@@ -209,89 +280,83 @@ ResultSet rst;
         );
 
         btnTambah.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        btnTambah.setText("Tambah");
+        btnTambah.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-plus-20_1.png"))); // NOI18N
+        btnTambah.setText("TAMBAH");
         btnTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTambahActionPerformed(evt);
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 255));
+        Beranda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-home-20.png"))); // NOI18N
+        Beranda.setText("Beranda");
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Silahkan Login Dulu..!!!");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        txtJam.addActionListener(new java.awt.event.ActionListener() {
+        Register.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-register-20.png"))); // NOI18N
+        Register.setText("Register");
+        Register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtJamActionPerformed(evt);
+                RegisterActionPerformed(evt);
             }
         });
+        Beranda.add(Register);
 
-        btnPelanggan.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        btnPelanggan.setText("PELANGGAN");
-        btnPelanggan.addActionListener(new java.awt.event.ActionListener() {
+        Login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-enter-20.png"))); // NOI18N
+        Login.setText("Login");
+        Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPelangganActionPerformed(evt);
+                LoginActionPerformed(evt);
             }
         });
+        Beranda.add(Login);
 
-        btnProduk.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        btnProduk.setText("PRODUK");
-        btnProduk.addActionListener(new java.awt.event.ActionListener() {
+        Logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-logout-rounded-20.png"))); // NOI18N
+        Logout.setText("Logout");
+        Logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProdukActionPerformed(evt);
+                LogoutActionPerformed(evt);
             }
         });
+        Beranda.add(Logout);
 
-        btnPenjualan.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        btnPenjualan.setText("PENJUALAN");
-        btnPenjualan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPenjualanActionPerformed(evt);
-            }
-        });
+        jMenuBar1.add(Beranda);
 
-        jMenu1.setText("Beranda");
-        jMenuBar1.add(jMenu1);
+        Toko.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-shop-20.png"))); // NOI18N
+        Toko.setText("Master");
 
-        jMenu2.setText("Master");
-        jMenuBar1.add(jMenu2);
+        Produk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-new-product-20.png"))); // NOI18N
+        Produk.setText("Produk");
+        Toko.add(Produk);
 
-        jMenu3.setText("Transaksi");
+        Pelanggan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-customer-30.png"))); // NOI18N
+        Pelanggan.setText("Pelanggan");
+        Toko.add(Pelanggan);
+
+        jMenuBar1.add(Toko);
+
+        Transaksi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-total-sales-30.png"))); // NOI18N
+        Transaksi.setText("Transaksi");
+
+        Penjualan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-transaction-20.png"))); // NOI18N
+        Penjualan.setText("Penjualan");
+        Transaksi.add(Penjualan);
+
+        jMenuBar1.add(Transaksi);
+
+        Laporan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-bill-20_1.png"))); // NOI18N
+        Laporan.setText("Laporan");
+
+        RkpLaporan.setText("Rekap Laporan");
+        Laporan.add(RkpLaporan);
+
+        jMenuBar1.add(Laporan);
+
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-about-me-20.png"))); // NOI18N
+        jMenu3.setText("Help");
+
+        Tentang.setText("Tentang");
+        jMenu3.add(Tentang);
+
         jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Laporan");
-
-        RkpLap.setText("Rekap Laporan");
-        RkpLap.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RkpLapMouseClicked(evt);
-            }
-        });
-        jMenu4.add(RkpLap);
-
-        jMenuBar1.add(jMenu4);
-
-        jMenu5.setText("Tentang");
-        jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
 
@@ -317,8 +382,10 @@ ResultSet rst;
                             .addComponent(btnPelanggan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(114, 114, 114)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnPenjualan)
-                            .addComponent(btnProduk, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnProduk, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(btnPenjualan)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -335,15 +402,34 @@ ResultSet rst;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnProduk)
                     .addComponent(btnTambah))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnPenjualan)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPenjualan, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPelanggan))
-                .addGap(11, 11, 11))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtJamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtJamActionPerformed
+
+    private void btnPelangganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPelangganActionPerformed
+       new FromPelanggan().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPelangganActionPerformed
+
+    private void btnProdukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdukActionPerformed
+      new FromProduk().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProdukActionPerformed
+
+    private void btnPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPenjualanActionPerformed
+       new FromPenjualan().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPenjualanActionPerformed
 
     private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
         btnBatal.setVisible(true);
@@ -352,27 +438,28 @@ ResultSet rst;
 
     private void btnMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasukActionPerformed
         try{
-            String sql ="select * from login where username='"+txtUsername.getText()+"' and password='"+txtPassword.getText()+"' and HakAkses='"+cmbAkses.getSelectedItem()+"'";
+            String sql ="select * from login where Username='"+txtUsername.getText()+"' and Password='"+txtPassword.getText()+"' and HakAkses='"+cmbAkses.getSelectedItem()+"'";
             pst = konek.prepareStatement(sql);
             rst = pst.executeQuery();
             if(rst.next()){
                 if (txtPassword.getText().equals("Password")&& txtUsername.getText().equals("Username")&& cmbAkses.getSelectedItem().equals(rst.getString("HakAkses")));
-                if(cmbAkses.getSelectedItem().equals("admin")) {
-                    Register.setEnabled(true);
+                if(cmbAkses.getSelectedItem().equals("ADMIN")) {
+                    Beranda.setEnabled(true);
                     Logout.setEnabled(true);
                     Toko.setEnabled(true);
                     Transaksi.setEnabled(true);
                     Laporan.setEnabled(true);
                     txtJam.setEditable(false);
                     txtTanggal.setEnabled(false);
-                    FromLogin.setEnabled(false);
+                    FromLogin.setVisible(false);
                     btnMasuk.setEnabled(true);
                     btnBatal.setEnabled(true);
                     btnProduk.setEnabled(true);
                     btnPelanggan.setEnabled(true);
                     btnPenjualan.setEnabled(true);
                     btnTambah.setEnabled(true);
-                }else if (cmbAkses.getSelectedItem().equals("petugas")){
+                }else if (cmbAkses.getSelectedItem().equals("PETUGAS")){
+                    Beranda.setEnabled(false);
                     Register.setEnabled(false);
                     Logout.setEnabled(true);
                     Toko.setEnabled(true);
@@ -380,13 +467,18 @@ ResultSet rst;
                     Laporan.setEnabled(true);
                     txtJam.setEditable(false);
                     txtTanggal.setEnabled(false);
-                    FromLogin.setEnabled(false);
+                    FromLogin.setVisible(false);
                     btnMasuk.setEnabled(true);
                     btnBatal.setEnabled(true);
                     btnProduk.setEnabled(true);
                     btnPelanggan.setEnabled(true);
                     btnPenjualan.setEnabled(true);
-                    btnTambah.setEnabled(true);
+                    btnTambah.setEnabled(false);
+                }
+                {
+                    JOptionPane.showMessageDialog(null, "Selamat Datang '"+txtUsername.getText()+"'");
+                    String text = txtUsername.getText();
+                    lblUser.setText("Selamat Datang,"+text);
                 }
             }else {
                 JOptionPane.showMessageDialog (null,"GAGAL MASUK.PERIKSA KEMBALI USERNAME/PASSWORD/HAK AKSES");
@@ -404,29 +496,17 @@ ResultSet rst;
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTambahActionPerformed
 
-    private void txtJamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJamActionPerformed
+    private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtJamActionPerformed
+    }//GEN-LAST:event_LogoutActionPerformed
 
-    private void btnPelangganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPelangganActionPerformed
-        btnPelanggan.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPelangganActionPerformed
+    private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
+new FromRegister().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterActionPerformed
 
-    private void btnProdukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdukActionPerformed
-        btnProduk.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnProdukActionPerformed
-
-    private void btnPenjualanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPenjualanActionPerformed
-        btnPenjualan.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPenjualanActionPerformed
-
-    private void RkpLapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RkpLapMouseClicked
-new FromLapTransaksi().setVisible(true);       
-// TODO add your handling code here:
-    }//GEN-LAST:event_RkpLapMouseClicked
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+FromLogin.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -464,8 +544,19 @@ new FromLapTransaksi().setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Beranda;
     private javax.swing.JInternalFrame FromLogin;
-    private javax.swing.JMenuItem RkpLap;
+    private javax.swing.JMenu Laporan;
+    private javax.swing.JMenuItem Login;
+    private javax.swing.JMenuItem Logout;
+    private javax.swing.JMenuItem Pelanggan;
+    private javax.swing.JMenuItem Penjualan;
+    private javax.swing.JMenuItem Produk;
+    private javax.swing.JMenuItem Register;
+    private javax.swing.JMenuItem RkpLaporan;
+    private javax.swing.JMenuItem Tentang;
+    private javax.swing.JMenu Toko;
+    private javax.swing.JMenu Transaksi;
     private javax.swing.JButton btnBatal;
     private javax.swing.JButton btnMasuk;
     private javax.swing.JButton btnPelanggan;
@@ -473,19 +564,15 @@ new FromLapTransaksi().setVisible(true);
     private javax.swing.JButton btnProduk;
     private javax.swing.JButton btnTambah;
     private javax.swing.JComboBox<String> cmbAkses;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblUser;
     private javax.swing.JTextField txtJam;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtTanggal;

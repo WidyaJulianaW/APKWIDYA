@@ -87,6 +87,7 @@ ResultSet rst;
         );
 
         btnbatal.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnbatal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-cancel-20.png"))); // NOI18N
         btnbatal.setText("BATAL");
         btnbatal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,24 +96,30 @@ ResultSet rst;
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-customer-30_1.png"))); // NOI18N
         jLabel1.setText("DAFTAR DISINI");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-username-20.png"))); // NOI18N
         jLabel2.setText("ID Login");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-checked-identification-documents-20.png"))); // NOI18N
         jLabel3.setText("Usename");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-password-20.png"))); // NOI18N
         jLabel4.setText("Password");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-access-20_1.png"))); // NOI18N
         jLabel5.setText("Hak Akes");
 
         cmbakses.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         cmbakses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Salah Satu-", "Admin", "Petugas" }));
 
         btnsimpan.setFont(new java.awt.Font("Times New Roman", 3, 12)); // NOI18N
+        btnsimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasikasir_widya/image/icons8-bookmark-20.png"))); // NOI18N
         btnsimpan.setText("SIMPAN");
         btnsimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,7 +163,7 @@ ResultSet rst;
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(txtusername)
                             .addComponent(txtlogin, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cmbakses, javax.swing.GroupLayout.Alignment.TRAILING, 0, 156, Short.MAX_VALUE))))
+                            .addComponent(cmbakses, javax.swing.GroupLayout.Alignment.TRAILING, 0, 132, Short.MAX_VALUE))))
                 .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
@@ -185,7 +192,7 @@ ResultSet rst;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnbatal)
                     .addComponent(btnsimpan))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
